@@ -1,0 +1,23 @@
+{
+  "accepts": ["id"]  ,
+  "classes":
+    ["Pathway"]
+  ,
+  "columnMapping": {
+    "Gene": {
+      "id": "primaryIdentifier"
+    },
+    "Pathway": {
+      "id": "identifier"
+    }
+  },
+  "files" : {
+    "css" : "dist/style.css",
+    "js" : "dist/bundle.js"
+  },
+  "toolName" : "Bluegenes Reactome Pathway Viewer",
+  "externals" : {
+    "scripts" : ["https://reactome.org/FireworksJs/fireworks/fireworks.nocache.js"],
+    "globals" : "globals.js"
+  }
+}
