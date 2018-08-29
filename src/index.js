@@ -52,8 +52,6 @@ export function main(el, service, imEntity, state, config) {
       imjsService.findById(imEntity.class, imEntity.value)
         .then(function(response) {
           identifier = response[columnToConvert];
-
-          console.log("%cidentifier", "color:darkseagreen;font-weight:bold;", identifier);
           checkIfReactomeReady();
         });
     }
@@ -83,7 +81,7 @@ export function main(el, service, imEntity, state, config) {
       console.log("Initialising Fireworks Reactome script")
     } else {
       if (reactomeLoadingSettings.attemptsLeft > 0) {
-        console.log("%cTrying to load Reactome Fireworks. Attempts left: ", "color:darkseagreen;font-weight:bold;", reactomeLoadingSettings.attemptsLeft);
+        console.log("%cTrying to load Reactome Fireworks. Attempts left: ", "border-bottom:chartreuse solid 3px;", reactomeLoadingSettings.attemptsLeft);
         window.setTimeout(checkIfReactomeReady, reactomeLoadingSettings.timer);
         reactomeLoadingSettings.attemptsLeft--;
         reactomeLoadingSettings.timer = reactomeLoadingSettings.timer * 2;
@@ -96,14 +94,13 @@ export function main(el, service, imEntity, state, config) {
     var fireworks = Reactome.Fireworks.create({
       "proxyPrefix": "https://reactome.org",
       "placeHolder": el.id,
-      //TODO, check element containing width, height
-      "width": 930,
+      "width": el.clientWidth,
       "height": 500
     });
 
     //Highlight the identifier from the report page here:
     fireworks.onFireworksLoaded(function(loaded) {
-      console.log("%cFireworks loaded successfully", "border-bottom:chartreuse solid 3px;");
+      console.log("%cReactome Fireworks loaded successfully", "border-bottom:chartreuse solid 3px;");
       fireworks.flagItems(identifier);
     });
 
