@@ -9,6 +9,7 @@
     Bluegenes Reactome Pathway Viewer
   </title>
 
+  <script src="src/globals.js"></script>
   <!-- You can assume imjs is on the window.  -->
   <script src="node_modules/imjs/dist/im.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -53,10 +54,6 @@
         bluegenesToolReactome.main(
           elem, imURL, dataToInitialiseToolWith, toolState, config);
       });
-
-      function onReactomeFireworksReady(el) {
-          _toolAPIGlobals.fireworksReady = true;
-      }
 
   </script>
   <script src="dist/bundle.js"></script>

@@ -18,6 +18,6 @@
   "toolName" : "Bluegenes Reactome Pathway Viewer",
   "externals" : {
     "scripts" : ["https://reactome.org/FireworksJs/fireworks/fireworks.nocache.js"],
-    "globals" : "globals.js"
+    "globals" : "src/globals.js"
   }
 }
